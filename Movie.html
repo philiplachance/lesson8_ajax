@@ -1,8 +1,8 @@
 <html>
 <!- - 
 Program Name:   Seminole Movie Connection
-Author: 
-Date: 
+Author: Philip LaChance
+Date: July 29, 2016
 Filename:   Movie.html
 - ->
 <head>
@@ -51,15 +51,49 @@ Filename:   Movie.html
         <a href="#" class="list-group-item">
             <h3 class="list-group-item-heading">Release Date:</h3>
             <p class="list-group-item-text lead text-primary" id="Released">  </p>
-        </a> 
+        </a>
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Year:</h3>
+            <p class="list-group-item-text lead text-primary" id="Released">  </p>
+        </a>
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Director:</h3>
+            <p class="list-group-item-text lead text-primary" id="Released">  </p>
+        </a>
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Genre:</h3>
+            <p class="list-group-item-text lead text-primary" id="Released">  </p>
+        </a>
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Language:</h3>
+            <p class="list-group-item-text lead text-primary" id="Released">  </p>
+        </a>
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Metascore:</h3>
+            <p class="list-group-item-text lead text-primary" id="Released">  </p>
+        </a>
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Writer:</h3>
+            <p class="list-group-item-text lead text-primary" id="Released">  </p>
+        </a>
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Type:</h3>
+            <p class="list-group-item-text lead text-primary" id="Released">  </p>
+        </a>
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Runtime:</h3>
+            <p class="list-group-item-text lead text-primary" id="Released">  </p>
+        </a>
+        
+         
 
     </div>
 </div> 
     <script>
         $(document).ready(function(){
-           $(':button').click(function(){
+          $(':button').click(function(){
                  var message = 't=' + $('#movieName').val();   
-                 $.ajax({
+                $.ajax({
                       type: 'GET',
                       url: 'https://www.omdbapi.com/?',
                       data: message             
@@ -69,7 +103,16 @@ Filename:   Movie.html
                      $('#Rated').html(json.Rated);
                      $('#Actors').html(json.Actors);
                      $('#Plot').html(json.Plot);
+                     $('#Year').html(json.Year);
                      $('#Released').html(json.Released);
+                     $('#Director').html(json.Director);
+                     $('#Genre').html(json.Genre);
+                     $('#Language').html(json.Language);
+                     $('#Metascore').html(json.Metascore);
+                     $('#Writer').html(json.Writer);
+                     $('#Type').html(json.Type);
+                     $('#Runtime').html(json.Runtime);
+                /*global $*/     
                 })
                 .fail(function() {
                       alert("Posting failed.");              
